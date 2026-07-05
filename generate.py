@@ -137,7 +137,7 @@ def append_to_apps_list(app_name, app_slug, base_url, folder_exists):
             if not file_exists:
                 f.write("# Generated App Pages\n\n")
             f.write(f"## {app_name}\n")
-            f.write(f"Privacy Policy: {privacy_url}\n")
+            f.write(f"Privacy Policy: {privacy_url}  \n")
             f.write(f"Support Page:   {support_url}\n\n")
         print_success(f"Appended URLs to {os.path.basename(apps_md_path)}")
     except Exception as e:
