@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED PLAYER - Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-primary: #6366f1;
+            --accent-secondary: #a855f7;
+            --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            --border-color: rgba(226, 232, 240, 0.8);
+            --shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 20px 40px -15px rgba(99, 102, 241, 0.12), 0 1px 5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0b0f19;
+                --card-bg: #151b2c;
+                --text-primary: #f8fafc;
+                --text-secondary: #94a3b8;
+                --border-color: rgba(255, 255, 255, 0.06);
+                --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
+                --shadow-hover: 0 20px 40px -15px rgba(99, 102, 241, 0.2), 0 1px 5px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding: 60px 20px;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* App Header Card */
+        .header-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .header-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--accent-gradient);
+        }
+
+        .app-icon-container {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--accent-gradient);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            user-select: none;
+            transition: var(--transition);
+        }
+
+        .header-card:hover .app-icon-container {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.08);
+            color: var(--accent-primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .last-updated {
+                background: rgba(99, 102, 241, 0.2);
+                color: #a5b4fc;
+            }
+        }
+
+        /* Grid Layout for content boxes */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .box:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.01em;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--accent-gradient);
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Topics tags list */
+        .topics-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .topic-tag {
+            background: rgba(99, 102, 241, 0.04);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .box:hover .topic-tag {
+            border-color: rgba(99, 102, 241, 0.2);
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .topic-tag {
+                background: rgba(255, 255, 255, 0.03);
+            }
+            .box:hover .topic-tag {
+                background: rgba(99, 102, 241, 0.15);
+            }
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        /* Support Button */
+        .support-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            background: var(--accent-gradient);
+            color: white !important;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.4);
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .support-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -5px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 45px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 30px 15px;
+            }
+            .header-card {
+                padding: 30px 20px;
+            }
+            .box {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-card">
+        <div class="app-icon-container">M</div>
+        <div class="subtitle">MED PLAYER</div>
+        <h1>Support Center</h1>
+        <div class="last-updated">Last Updated: July 05, 2026</div>
+    </div>
+
+    <div class="grid">
+        <div class="box">
+            <h2>Welcome to Support</h2>
+            <p>
+                Thank you for using <strong>MED PLAYER</strong>. If you have questions, experience technical issues, or have suggestions for improving the app, we're here to help.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Support Topics</h2>
+            <div class="topics-list">
+                <div class="topic-tag">Web browsing issues</div>
+                <div class="topic-tag">Document viewing and management</div>
+                <div class="topic-tag">Downloads and file handling</div>
+                <div class="topic-tag">Search and navigation</div>
+                <div class="topic-tag">Performance and stability</div>
+                <div class="topic-tag">Bug reports</div>
+                <div class="topic-tag">Feature requests</div>
+                <div class="topic-tag">General feedback</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Contact Support</h2>
+            <p>
+                Need assistance? Contact us anytime:
+            </p>
+            <p>
+                <a href="mailto:mer.wathek@gmail.com?subject=Support%20Request%3A%20MED%20PLAYER" class="support-button">Email Support</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
+                We strive to respond as quickly as possible.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Feedback</h2>
+            <p>
+                Your feedback helps us improve MED PLAYER. Whether you have ideas for new browsing features, document tools, or productivity enhancements, we'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Compatibility</h2>
+            <p>
+                MED PLAYER is designed for modern Android and iOS devices. Some features may require an internet connection, while document management capabilities may vary depending on the file format and operating system version.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Akram. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>
