@@ -43,7 +43,7 @@ Customize your default profile in `config.json` so you do not have to re-type th
 
 1. Open your terminal in this directory and execute the generator script:
    ```bash
-   ./generate.py
+   python generate.py
    ```
 2. Enter the **iOS App Name** (e.g., `Bolt Pro: Browser and Docs`).
 3. Press **Enter** to accept default developer name, email, and date, or override them.

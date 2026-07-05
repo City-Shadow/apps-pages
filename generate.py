@@ -16,18 +16,28 @@ class Colors:
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def print_header(title):
     print(f"\n{Colors.HEADER}{Colors.BOLD}=== {title} ==={Colors.ENDC}\n")
 
 def print_success(msg):
-    print(f"{Colors.GREEN}✓ {msg}{Colors.ENDC}")
+    try:
+        print(f"{Colors.GREEN}✓ {msg}{Colors.ENDC}")
+    except UnicodeEncodeError:
+        print(f"{Colors.GREEN}[OK] {msg}{Colors.ENDC}")
 
 def print_warning(msg):
-    print(f"{Colors.WARNING}⚠ {msg}{Colors.ENDC}")
+    try:
+        print(f"{Colors.WARNING}⚠ {msg}{Colors.ENDC}")
+    except UnicodeEncodeError:
+        print(f"{Colors.WARNING}[WARN] {msg}{Colors.ENDC}")
 
 def print_error(msg):
-    print(f"{Colors.FAIL}✗ {msg}{Colors.ENDC}")
+    try:
+        print(f"{Colors.FAIL}✗ {msg}{Colors.ENDC}")
+    except UnicodeEncodeError:
+        print(f"{Colors.FAIL}[ERROR] {msg}{Colors.ENDC}")
 
 def slugify(text):
     # Convert to lowercase, replace non-alphanumeric with hyphen, strip duplicate/edge hyphens
@@ -104,6 +114,34 @@ def run_git_commands(folder_name, app_name):
                 print_warning("No Git remote 'origin' configured. Push to GitHub manually once configured.")
         except Exception as e:
             print_error(f"Git execution failed: {e}")
+
+def append_to_apps_list(app_name, app_slug, base_url, folder_exists):
+    if folder_exists:
+        print_warning("Skipped appending to apps.md because the folder already exists.")
+        return
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    apps_md_path = os.path.join(script_dir, 'apps.md')
+    
+    if base_url:
+        privacy_url = f"{base_url}/{app_slug}/privacy.html"
+        support_url = f"{base_url}/{app_slug}/support.html"
+    else:
+        privacy_url = f"https://<username>.github.io/<repo-name>/{app_slug}/privacy.html"
+        support_url = f"https://<username>.github.io/<repo-name>/{app_slug}/support.html"
+        
+    file_exists = os.path.exists(apps_md_path)
+    
+    try:
+        with open(apps_md_path, 'a', encoding='utf-8') as f:
+            if not file_exists:
+                f.write("# Generated App Pages\n\n")
+            f.write(f"## {app_name}\n")
+            f.write(f"Privacy Policy: {privacy_url}\n")
+            f.write(f"Support Page:   {support_url}\n\n")
+        print_success(f"Appended URLs to {os.path.basename(apps_md_path)}")
+    except Exception as e:
+        print_warning(f"Could not append to apps.md: {e}")
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -201,6 +239,9 @@ def main():
 
     # 6. Create app directory
     target_dir = os.path.join(script_dir, app_slug)
+    folder_exists = os.path.exists(target_dir)
+    if folder_exists:
+        print_warning(f"Folder '{app_slug}' already exists. Overwriting files inside.")
     os.makedirs(target_dir, exist_ok=True)
 
     # Write files
@@ -226,6 +267,8 @@ def main():
         print(f"\n{Colors.WARNING}GitHub pages base URL could not be auto-detected. Once remote is set up, they will look like:{Colors.ENDC}")
         print(f"Privacy: https://<username>.github.io/<repo-name>/{app_slug}/privacy.html")
         print(f"Support: https://<username>.github.io/<repo-name>/{app_slug}/support.html")
+
+    append_to_apps_list(app_name, app_slug, base_url, folder_exists)
 
     # 8. Git automation
     run_git_commands(app_slug, app_name)
