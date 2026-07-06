@@ -90,6 +90,8 @@ def run_git_commands(folder_name, app_name):
     if commit_opt == 'y' or commit_opt == 'yes':
         try:
             subprocess.check_call(["git", "add", folder_name])
+            if os.path.exists("apps.md"):
+                subprocess.check_call(["git", "add", "apps.md"])
             commit_msg = f"Add privacy policy and support page for {app_name}"
             subprocess.check_call(["git", "commit", "-m", commit_msg])
             print_success(f"Committed changes successfully with message: '{commit_msg}'")
