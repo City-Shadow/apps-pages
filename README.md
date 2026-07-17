@@ -22,20 +22,28 @@ Customize your default profile in `config.json` so you do not have to re-type th
 
 ```json
 {
-  "developer_name": "Wathek",
+  "developer_name": "Akram",
   "developer_email": "mer.wathek@gmail.com",
+  "accounts": [
+    { "name": "Akram", "email": "mer.wathek@gmail.com" },
+    { "name": "Hanine", "email": "HanineMeraghni2002@icloud.com" }
+  ],
+  "default_services": ["admob", "iap", "supabase"],
   "default_features": [
-    "Web browsing issues",
-    "Document viewing and management",
-    "Downloads and file handling",
-    "Search and navigation",
-    "Performance and stability",
-    "Bug reports",
-    "Feature requests",
+    "In-App purchases, billing, and restoring premium features",
+    "Ad playback and reward issues",
+    "App features and functionality",
+    "Performance or crash reports",
+    "Settings, backup, and customization",
+    "Bug reports and feature requests",
     "General feedback"
   ]
 }
 ```
+
+- **`accounts`**: list of developer accounts offered as a numbered choice at runtime (name + email are paired).
+- **`default_services`**: third-party services preselected when prompting (`admob`, `iap`, `supabase`).
+- **`developer_name` / `developer_email`**: kept as a fallback when no `accounts` array is present.
 
 ---
 
@@ -46,9 +54,11 @@ Customize your default profile in `config.json` so you do not have to re-type th
    python generate.py
    ```
 2. Enter the **iOS App Name** (e.g., `Bolt Pro: Browser and Docs`).
-3. Press **Enter** to accept default developer name, email, and date, or override them.
-4. Choose whether to use default support topics or enter a customized list.
-5. The folder and pages will be created. Select `y` to commit them immediately.
+3. **Choose a developer account** (numbered list from `config.json`) — name and email are paired.
+4. **Select third-party services** to declare (Google AdMob, In-App Purchases, Supabase). Press Enter for the default set, or enter `none`.
+5. Press **Enter** to accept the default date, or override it.
+6. Choose whether to use default support topics or enter a customized list.
+7. The folder and pages will be created. Select `y` to commit them immediately.
 
 ---
 

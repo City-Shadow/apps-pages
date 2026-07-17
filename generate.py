@@ -145,6 +145,103 @@ def append_to_apps_list(app_name, app_slug, base_url, folder_exists):
     except Exception as e:
         print_warning(f"Could not append to apps.md: {e}")
 
+def prompt_accounts(config):
+    """Prompt the user to pick a developer account (name + email pair)."""
+    accounts = config.get("accounts")
+    if not accounts:
+        accounts = [
+            {"name": config.get("developer_name", "Wathek"), "email": config.get("developer_email", "mer.wathek@gmail.com")},
+            {"name": "Hanine", "email": "HanineMeraghni2002@icloud.com"}
+        ]
+    print(f"\n{Colors.BOLD}Choose developer account:{Colors.ENDC}")
+    for i, acc in enumerate(accounts, 1):
+        print(f"  {i}) {acc['name']} / {acc['email']}")
+    default_idx = 1
+    while True:
+        choice = input(f"Enter choice [{default_idx}]: ").strip()
+        if not choice:
+            idx = default_idx - 1
+            break
+        try:
+            idx = int(choice) - 1
+            if 0 <= idx < len(accounts):
+                break
+            print_error(f"Please enter a number between 1 and {len(accounts)}.")
+        except ValueError:
+            print_error("Invalid input. Please enter a number.")
+    acc = accounts[idx]
+    print_success(f"Using account: {acc['name']} / {acc['email']}")
+    return acc["name"], acc["email"]
+
+def prompt_services(config):
+    """Prompt the user to select which third-party services to declare."""
+    service_options = [
+        ("admob", "Google AdMob (Mobile Ads)"),
+        ("iap", "Apple App Store / Google Play (In-App Purchases)"),
+        ("supabase", "Supabase (Cloud Database)"),
+    ]
+    default_services = config.get("default_services", ["admob", "iap", "supabase"])
+    default_indices = [i + 1 for i, (key, _) in enumerate(service_options) if key in default_services]
+
+    print(f"\n{Colors.BOLD}Select third-party services to declare in the Privacy Policy:{Colors.ENDC}")
+    for i, (_, label) in enumerate(service_options, 1):
+        print(f"  {i}) {label}")
+    hint = ",".join(str(i) for i in default_indices) if default_indices else "none"
+    sel = input(f"Enter numbers (comma/space separated), 'none', or Enter for default [{hint}]: ").strip()
+
+    if sel.lower() == "none":
+        selected = []
+    elif not sel:
+        selected = default_indices
+    else:
+        selected = []
+        for part in re.split(r"[,\s]+", sel):
+            part = part.strip()
+            if not part:
+                continue
+            try:
+                n = int(part)
+                if 1 <= n <= len(service_options):
+                    selected.append(n)
+            except ValueError:
+                pass
+        selected = list(dict.fromkeys(selected))
+
+    keys = {i + 1: k for i, (k, _) in enumerate(service_options)}
+    enabled = {k: False for k, _ in service_options}
+    for n in selected:
+        enabled[keys[n]] = True
+
+    chosen_labels = [service_options[n - 1][1] for n in selected]
+    if chosen_labels:
+        print_success(f"Services selected: {', '.join(chosen_labels)}")
+    else:
+        print_warning("No third-party services will be declared.")
+    return enabled
+
+def apply_conditional_blocks(html, services):
+    """Remove or keep conditional template blocks based on selected services."""
+    ads = services.get("admob", False)
+    iap = services.get("iap", False)
+    supabase = services.get("supabase", False)
+    blocks = [
+        ("ADS_BLOCK", ads),
+        ("IAP_BLOCK", iap),
+        ("SUPABASE_BLOCK", supabase),
+        ("MONETIZATION_BLOCK", ads or iap),
+        ("ANY_SERVICE_BLOCK", ads or iap or supabase),
+        ("FAQ_BLOCK", ads or iap),
+    ]
+    for name, enabled in blocks:
+        start = "{{" + name + "_START}}"
+        end = "{{" + name + "_END}}"
+        if enabled:
+            html = html.replace(start, "").replace(end, "")
+        else:
+            pattern = re.compile(re.escape(start) + ".*?" + re.escape(end), re.DOTALL)
+            html = pattern.sub("", html)
+    return html
+
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     config = load_config()
@@ -162,18 +259,18 @@ def main():
     app_initial = app_name[0].upper() if app_name else "A"
 
     # 2. Setup default configurations
-    default_dev_name = config.get("developer_name", "Wathek")
-    default_email = config.get("developer_email", "mer.wathek@gmail.com")
     default_features = config.get("default_features", [
         "Bug reports",
         "Feature requests",
         "General feedback"
     ])
 
-    # 3. Interactive confirmations/overrides
-    dev_name = input(f"Developer Name [{default_dev_name}]: ").strip() or default_dev_name
-    dev_email = input(f"Developer Email [{default_email}]: ").strip() or default_email
-    
+    # 3. Choose developer account (numbered) and third-party services
+    dev_name, dev_email = prompt_accounts(config)
+
+    # Third-party services to declare (AdMob, IAP, Supabase)
+    services = prompt_services(config)
+
     # Date formatting
     today_date = datetime.date.today().strftime("%B %d, %Y")
     current_year = str(datetime.date.today().year)
@@ -238,6 +335,10 @@ def main():
         .replace("{{YEAR}}", current_year)\
         .replace("{{SUPPORT_TOPICS}}", topics_html)\
         .replace("{{EMAIL_SUBJECT}}", email_subject)
+
+    # Apply conditional service blocks (AdMob / IAP / Supabase / FAQ)
+    privacy_html = apply_conditional_blocks(privacy_html, services)
+    support_html = apply_conditional_blocks(support_html, services)
 
     # 6. Create app directory
     target_dir = os.path.join(script_dir, app_slug)

@@ -256,26 +256,6 @@
             box-shadow: 0 12px 24px -5px rgba(99, 102, 241, 0.5);
         }
 
-        /* FAQ Items */
-        .faq-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-
         /* Footer */
         .footer {
             text-align: center;
@@ -318,31 +298,9 @@
         <div class="box">
             <h2>Welcome to Support</h2>
             <p>
-                Thank you for using <strong>{{APP_NAME}}</strong>. If you have questions, encounter technical issues, or have ideas for improving the app, we're here to help.
+                Thank you for using <strong>{{APP_NAME}}</strong>. If you have questions, experience technical issues, or have suggestions for improving the app, we're here to help.
             </p>
         </div>
-
-        {{FAQ_BLOCK_START}}
-        <div class="box">
-            <h2>Frequently Asked Questions</h2>
-            {{IAP_BLOCK_START}}
-            <div class="faq-item">
-                <div class="faq-question">How do I restore my premium purchases?</div>
-                <p>If you reinstalled the app or set up a new device, you can restore your purchases by opening the app, navigating to the <strong>Settings</strong> screen, and tapping the <strong>"Restore Purchases"</strong> button. Make sure you are signed in with the same App Store/Google Play account used for the original purchase.</p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">I bought an item but it hasn't appeared. What should I do?</div>
-                <p>First, verify that your payment was successful in your Apple or Google account purchase history. Try restarting the app with a stable internet connection. If the item still does not show, tap the "Restore Purchases" button in the Settings menu or contact us below with your transaction ID.</p>
-            </div>
-            {{IAP_BLOCK_END}}
-            {{ADS_BLOCK_START}}
-            <div class="faq-item">
-                <div class="faq-question">Why are rewarded video ads failing to load?</div>
-                <p>Ads may fail to load due to poor internet connectivity, active adblockers, or temporary shortages of ads from the Google AdMob network. Ensure you have a stable network connection and try again.</p>
-            </div>
-            {{ADS_BLOCK_END}}
-        </div>
-        {{FAQ_BLOCK_END}}
 
         <div class="box">
             <h2>Support Topics</h2>
@@ -354,27 +312,27 @@
         <div class="box">
             <h2>Contact Support</h2>
             <p>
-                Need assistance? Contact us anytime via email:
+                Need assistance? Contact us anytime:
             </p>
             <p>
                 <a href="mailto:{{DEVELOPER_EMAIL}}?subject={{EMAIL_SUBJECT}}" class="support-button">Email Support</a>
             </p>
             <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
-                We strive to respond to all inquiries within 24-48 hours. Please include your device model, operating system, and purchase receipts (if applicable).
+                We strive to respond as quickly as possible.
             </p>
         </div>
 
         <div class="box">
             <h2>Feedback</h2>
             <p>
-                We value your feedback. Your suggestions, feature ideas, and bug reports help us continue improving {{APP_NAME}} and delivering the best experience possible.
+                Your feedback helps us improve {{APP_NAME}}. Whether you have ideas for new browsing features, document tools, or productivity enhancements, we'd love to hear from you.
             </p>
         </div>
 
         <div class="box">
             <h2>Compatibility</h2>
             <p>
-                {{APP_NAME}} is designed for modern Android and iOS devices. Performance may vary depending on your device model, operating system version, and available system resources.
+                {{APP_NAME}} is designed for modern Android and iOS devices. Some features may require an internet connection, while document management capabilities may vary depending on the file format and operating system version.
             </p>
         </div>
     </div>

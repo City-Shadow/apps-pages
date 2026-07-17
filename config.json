@@ -1,14 +1,18 @@
 {
   "developer_name": "Akram",
   "developer_email": "mer.wathek@gmail.com",
+  "accounts": [
+    { "name": "Akram", "email": "mer.wathek@gmail.com" },
+    { "name": "Hanine", "email": "HanineMeraghni2002@icloud.com" }
+  ],
+  "default_services": ["admob", "iap", "supabase"],
   "default_features": [
-    "Web browsing issues",
-    "Document viewing and management",
-    "Downloads and file handling",
-    "Search and navigation",
-    "Performance and stability",
-    "Bug reports",
-    "Feature requests",
+    "In-App purchases, billing, and restoring premium features",
+    "Ad playback and reward issues",
+    "App features and functionality",
+    "Performance or crash reports",
+    "Settings, backup, and customization",
+    "Bug reports and feature requests",
     "General feedback"
   ]
 }
