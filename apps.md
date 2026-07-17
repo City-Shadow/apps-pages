@@ -13,3 +13,7 @@ Support Page: https://City-Shadow.github.io/apps-pages/nota-ringtones-pro/suppor
 Privacy Policy: https://City-Shadow.github.io/apps-pages/super-cleanup/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/super-cleanup/support.html
 
+## Super: Live Simulator Game
+Privacy Policy: https://City-Shadow.github.io/apps-pages/super-live-simulator-game/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/super-live-simulator-game/support.html
+

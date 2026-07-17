@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super: Live Simulator Game - Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-primary: #6366f1;
+            --accent-secondary: #a855f7;
+            --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            --border-color: rgba(226, 232, 240, 0.8);
+            --shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 20px 40px -15px rgba(99, 102, 241, 0.12), 0 1px 5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0b0f19;
+                --card-bg: #151b2c;
+                --text-primary: #f8fafc;
+                --text-secondary: #94a3b8;
+                --border-color: rgba(255, 255, 255, 0.06);
+                --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
+                --shadow-hover: 0 20px 40px -15px rgba(99, 102, 241, 0.2), 0 1px 5px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding: 60px 20px;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* App Header Card */
+        .header-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .header-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--accent-gradient);
+        }
+
+        .app-icon-container {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--accent-gradient);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            user-select: none;
+            transition: var(--transition);
+        }
+
+        .header-card:hover .app-icon-container {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.08);
+            color: var(--accent-primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .last-updated {
+                background: rgba(99, 102, 241, 0.2);
+                color: #a5b4fc;
+            }
+        }
+
+        /* Grid Layout for content boxes */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .box:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.01em;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--accent-gradient);
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Topics tags list */
+        .topics-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .topic-tag {
+            background: rgba(99, 102, 241, 0.04);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .box:hover .topic-tag {
+            border-color: rgba(99, 102, 241, 0.2);
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .topic-tag {
+                background: rgba(255, 255, 255, 0.03);
+            }
+            .box:hover .topic-tag {
+                background: rgba(99, 102, 241, 0.15);
+            }
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        /* Support Button */
+        .support-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            background: var(--accent-gradient);
+            color: white !important;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.4);
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .support-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -5px rgba(99, 102, 241, 0.5);
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 45px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 30px 15px;
+            }
+            .header-card {
+                padding: 30px 20px;
+            }
+            .box {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-card">
+        <div class="app-icon-container">S</div>
+        <div class="subtitle">Super: Live Simulator Game</div>
+        <h1>Support Center</h1>
+        <div class="last-updated">Last Updated: July 17, 2026</div>
+    </div>
+
+    <div class="grid">
+        <div class="box">
+            <h2>Welcome to Support</h2>
+            <p>
+                Thank you for using <strong>Super: Live Simulator Game</strong>. If you have questions, encounter technical issues, or have ideas for improving the app, we're here to help.
+            </p>
+        </div>
+
+        
+        <div class="box">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I restore my premium purchases?</div>
+                <p>If you reinstalled the app or set up a new device, you can restore your purchases by opening the app, navigating to the <strong>Settings</strong> screen, and tapping the <strong>"Restore Purchases"</strong> button. Make sure you are signed in with the same App Store/Google Play account used for the original purchase.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">I bought an item but it hasn't appeared. What should I do?</div>
+                <p>First, verify that your payment was successful in your Apple or Google account purchase history. Try restarting the app with a stable internet connection. If the item still does not show, tap the "Restore Purchases" button in the Settings menu or contact us below with your transaction ID.</p>
+            </div>
+            
+            
+            <div class="faq-item">
+                <div class="faq-question">Why are rewarded video ads failing to load?</div>
+                <p>Ads may fail to load due to poor internet connectivity, active adblockers, or temporary shortages of ads from the Google AdMob network. Ensure you have a stable network connection and try again.</p>
+            </div>
+            
+        </div>
+        
+
+        <div class="box">
+            <h2>Support Topics</h2>
+            <div class="topics-list">
+                <div class="topic-tag">In-App purchases, billing, and restoring premium features</div>
+                <div class="topic-tag">Ad playback and reward issues</div>
+                <div class="topic-tag">App features and functionality</div>
+                <div class="topic-tag">Performance or crash reports</div>
+                <div class="topic-tag">Settings, backup, and customization</div>
+                <div class="topic-tag">Bug reports and feature requests</div>
+                <div class="topic-tag">General feedback</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Contact Support</h2>
+            <p>
+                Need assistance? Contact us anytime via email:
+            </p>
+            <p>
+                <a href="mailto:HanineMeraghni2002@icloud.com?subject=Support%20Request%3A%20Super%3A%20Live%20Simulator%20Game" class="support-button">Email Support</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
+                We strive to respond to all inquiries within 24-48 hours. Please include your device model, operating system, and purchase receipts (if applicable).
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Feedback</h2>
+            <p>
+                We value your feedback. Your suggestions, feature ideas, and bug reports help us continue improving Super: Live Simulator Game and delivering the best experience possible.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Compatibility</h2>
+            <p>
+                Super: Live Simulator Game is designed for modern Android and iOS devices. Performance may vary depending on your device model, operating system version, and available system resources.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Hanine. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>
