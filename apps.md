@@ -17,3 +17,7 @@ Support Page:   https://City-Shadow.github.io/apps-pages/super-cleanup/support.h
 Privacy Policy: https://City-Shadow.github.io/apps-pages/super-live-simulator-game/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/super-live-simulator-game/support.html
 
+## Nova - Grid & Share
+Privacy Policy: https://City-Shadow.github.io/apps-pages/nova-grid-share/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/nova-grid-share/support.html
+
