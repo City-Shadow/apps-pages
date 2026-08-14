@@ -21,3 +21,7 @@ Support Page:   https://City-Shadow.github.io/apps-pages/super-live-simulator-ga
 Privacy Policy: https://City-Shadow.github.io/apps-pages/nova-grid-share/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/nova-grid-share/support.html
 
+## Scroll Quran
+Privacy Policy: https://City-Shadow.github.io/apps-pages/scroll-quran/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/scroll-quran/support.html
+
