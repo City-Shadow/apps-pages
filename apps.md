@@ -25,3 +25,7 @@ Support Page:   https://City-Shadow.github.io/apps-pages/nova-grid-share/support
 Privacy Policy: https://City-Shadow.github.io/apps-pages/scroll-quran/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/scroll-quran/support.html
 
+## BloomDays
+Privacy Policy: https://City-Shadow.github.io/apps-pages/bloomdays/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/bloomdays/support.html
+
