@@ -39,7 +39,8 @@ Support Page: https://City-Shadow.github.io/apps-pages/bloomdays/support.html
 
 Privacy Policy: https://City-Shadow.github.io/apps-pages/batch-sweet-tracker/privacy.html  
 Support Page: https://City-Shadow.github.io/apps-pages/batch-sweet-tracker/support.html
-## Squishy Dumpling
-Privacy Policy: https://City-Shadow.github.io/apps-pages/squishy-dumpling/privacy.html  
-Support Page:   https://City-Shadow.github.io/apps-pages/squishy-dumpling/support.html
 
+## Squishy Dumpling
+
+Privacy Policy: https://City-Shadow.github.io/apps-pages/squishy-dumpling/privacy.html  
+Support Page: https://City-Shadow.github.io/apps-pages/squishy-dumpling/support.html
