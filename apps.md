@@ -44,3 +44,7 @@ Support Page: https://City-Shadow.github.io/apps-pages/batch-sweet-tracker/suppo
 
 Privacy Policy: https://City-Shadow.github.io/apps-pages/squishy-dumpling/privacy.html  
 Support Page: https://City-Shadow.github.io/apps-pages/squishy-dumpling/support.html
+## IronPulse Gym Tracker
+Privacy Policy: https://City-Shadow.github.io/apps-pages/ironpulse-gym-tracker/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/ironpulse-gym-tracker/support.html
+
