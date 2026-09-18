@@ -48,3 +48,7 @@ Support Page: https://City-Shadow.github.io/apps-pages/squishy-dumpling/support.
 Privacy Policy: https://City-Shadow.github.io/apps-pages/ironpulse-gym-tracker/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/ironpulse-gym-tracker/support.html
 
+## Sweet Movies: Track & Trailers
+Privacy Policy: https://City-Shadow.github.io/apps-pages/sweet-movies-track-trailers/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/sweet-movies-track-trailers/support.html
+
