@@ -26,7 +26,8 @@ Customize your default profile in `config.json` so you do not have to re-type th
   "developer_email": "mer.wathek@gmail.com",
   "accounts": [
     { "name": "Akram", "email": "mer.wathek@gmail.com" },
-    { "name": "Hanine", "email": "HanineMeraghni2002@icloud.com" }
+    { "name": "Hanine", "email": "HanineMeraghni2002@icloud.com" },
+    { "name": "Islam", "email": "islambelhardi12@gmail.com" }
   ],
   "default_services": ["admob", "iap", "supabase"],
   "default_features": [

@@ -151,7 +151,8 @@ def prompt_accounts(config):
     if not accounts:
         accounts = [
             {"name": config.get("developer_name", "Wathek"), "email": config.get("developer_email", "mer.wathek@gmail.com")},
-            {"name": "Hanine", "email": "HanineMeraghni2002@icloud.com"}
+            {"name": "Hanine", "email": "HanineMeraghni2002@icloud.com"},
+            {"name": "Islam", "email": "islambelhardi12@gmail.com"}
         ]
     print(f"\n{Colors.BOLD}Choose developer account:{Colors.ENDC}")
     for i, acc in enumerate(accounts, 1):
