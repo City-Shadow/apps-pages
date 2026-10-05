@@ -56,3 +56,7 @@ Support Page:   https://City-Shadow.github.io/apps-pages/sweet-movies-track-trai
 Privacy Policy: https://City-Shadow.github.io/apps-pages/mimic-party/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/mimic-party/support.html
 
+## SeeMore – Kdrama Track
+Privacy Policy: https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/support.html
+
