@@ -60,3 +60,7 @@ Support Page:   https://City-Shadow.github.io/apps-pages/mimic-party/support.htm
 Privacy Policy: https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/privacy.html  
 Support Page:   https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/support.html
 
+## ReelMedio - Watch Forever
+Privacy Policy: https://City-Shadow.github.io/apps-pages/reelmedio-watch-forever/privacy.html  
+Support Page:   https://City-Shadow.github.io/apps-pages/reelmedio-watch-forever/support.html
+
