@@ -62,5 +62,6 @@ Support Page:   https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/su
 
 ## ReelMedio - Watch Forever
 Privacy Policy: https://City-Shadow.github.io/apps-pages/reelmedio-watch-forever/privacy.html  
-Support Page:   https://City-Shadow.github.io/apps-pages/reelmedio-watch-forever/support.html
+Support Page:   https://City-Shadow.github.io/apps-pages/reelmedio-watch-forever/support.html  
+Config (Prod):  https://City-Shadow.github.io/apps-pages/reelmedio-watch-forever/config.json
 
