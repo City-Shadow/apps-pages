@@ -1,10 +1,23 @@
 {
   "developer_name": "Akram",
   "developer_email": "mer.wathek@gmail.com",
+  "cdn_branch": "main",
   "accounts": [
-    { "name": "Akram", "email": "mer.wathek@gmail.com" },
-    { "name": "Hanine", "email": "HanineMeraghni2002@icloud.com" },
-    { "name": "Islam", "email": "islambelhardi12@gmail.com" }
+    {
+      "name": "Akram",
+      "email": "mer.wathek@gmail.com",
+      "admob_publisher_id": "pub-3588263773495662"
+    },
+    {
+      "name": "Hanine",
+      "email": "HanineMeraghni2002@icloud.com",
+      "admob_publisher_id": ""
+    },
+    {
+      "name": "Islam",
+      "email": "islambelhardi12@gmail.com",
+      "admob_publisher_id": ""
+    }
   ],
   "default_services": ["admob", "iap", "supabase"],
   "default_features": [
@@ -15,5 +28,17 @@
     "Settings, backup, and customization",
     "Bug reports and feature requests",
     "General feedback"
-  ]
+  ],
+  "admob_test_units": {
+    "android": {
+      "app_open": "ca-app-pub-3940256099942544/9257395921",
+      "interstitial": "ca-app-pub-3940256099942544/1033173712",
+      "rewarded": "ca-app-pub-3940256099942544/5224354917"
+    },
+    "ios": {
+      "app_open": "ca-app-pub-3940256099942544/5575463023",
+      "interstitial": "ca-app-pub-3940256099942544/4411468910",
+      "rewarded": "ca-app-pub-3940256099942544/1712485313"
+    }
+  }
 }

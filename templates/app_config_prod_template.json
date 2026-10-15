@@ -1,0 +1,50 @@
+{
+  "config": {
+    "promotions": {
+      "enabled": true,
+      "interstitial_enabled": true,
+      "rewarded_enabled": true,
+      "debug_mode": false,
+
+      "app_open_ad_enabled": true,
+      "first_open_ad_enabled": true,
+      "app_open_ad_interval": 1,
+      "app_open_ad_max_per_day": 7,
+      "app_open_ad_max_total": 0,
+
+      "primary_action_ad_enabled": true,
+      "primary_action_ad_interval": 1,
+      "primary_action_ad_type": "{{PROD_PRIMARY_AD_TYPE}}",
+
+      "secondary_action_ad_enabled": true,
+      "secondary_action_ad_interval": 1,
+      "secondary_action_ad_type": "{{PROD_SECONDARY_AD_TYPE}}",
+
+      "detail_action_ad_enabled": true,
+      "detail_action_ad_interval": 1,
+      "detail_action_ad_type": "interstitial",
+
+      "interstitial_min_interval_seconds": 30,
+      "interstitial_max_per_session": 8,
+      "interstitial_max_per_day": 20,
+      "interstitial_load_retry_seconds": 5,
+
+      "promo_units": {
+        "ios": {
+          "interstitial_app_open_id": "{{IOS_PROD_APP_OPEN_ID}}",
+          "interstitial_primary_action_id": "{{IOS_PROD_PRIMARY_ACTION_ID}}",
+          "interstitial_secondary_action_id": "{{IOS_PROD_SECONDARY_ACTION_ID}}",
+          "interstitial_detail_action_id": "{{IOS_PROD_DETAIL_ACTION_ID}}",
+          "rewarded_unlock_id": "{{IOS_PROD_REWARDED_ID}}"
+        },
+        "android": {
+          "interstitial_app_open_id": "{{ANDROID_PROD_APP_OPEN_ID}}",
+          "interstitial_primary_action_id": "{{ANDROID_PROD_PRIMARY_ACTION_ID}}",
+          "interstitial_secondary_action_id": "{{ANDROID_PROD_SECONDARY_ACTION_ID}}",
+          "interstitial_detail_action_id": "{{ANDROID_PROD_DETAIL_ACTION_ID}}",
+          "rewarded_unlock_id": "{{ANDROID_PROD_REWARDED_ID}}"
+        }
+      }
+    }
+  }
+}

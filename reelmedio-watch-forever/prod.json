@@ -1,0 +1,56 @@
+{
+  "config": {
+    "promotions": {
+      "enabled": false,
+      "interstitial_enabled": true,
+      "rewarded_enabled": true,
+      "debug_mode": false,
+      "app_open_ad_enabled": true,
+      "first_open_ad_enabled": true,
+      "app_open_ad_interval": 1,
+      "app_open_ad_max_per_day": 7,
+      "app_open_ad_max_total": 0,
+      "movie_click_ad_enabled": true,
+      "movie_click_ad_interval": 1,
+      "movie_click_ad_type": "rewarded",
+      "play_click_ad_enabled": true,
+      "play_click_ad_interval": 1,
+      "play_click_ad_type": "rewarded",
+      "details_ad_enabled": true,
+      "details_ad_interval": 1,
+      "details_ad_type": "rewarded",
+      "interstitial_min_interval_seconds": 30,
+      "interstitial_max_per_session": 8,
+      "interstitial_max_per_day": 20,
+      "interstitial_load_retry_seconds": 5,
+      "promo_units": {
+        "ios": {
+          "interstitial_app_open_id": "ca-app-pub-3588263773495662/7548024310",
+          "interstitial_movie_click_id": "ca-app-pub-3588263773495662/8080350665",
+          "interstitial_play_click_id": "ca-app-pub-3588263773495662/1174187657",
+          "interstitial_details_click_id": "ca-app-pub-3588263773495662/6495806251",
+          "rewarded_unlock_id": "ca-app-pub-3588263773495662/2201338023"
+        },
+        "android": {
+          "interstitial_app_open_id": "ca-app-pub-YOUR_ANDROID_PUBLISHER_ID/ANDROID_APP_OPEN_ID",
+          "interstitial_movie_click_id": "ca-app-pub-YOUR_ANDROID_PUBLISHER_ID/ANDROID_INTERSTITIAL_ID",
+          "interstitial_play_click_id": "ca-app-pub-YOUR_ANDROID_PUBLISHER_ID/ANDROID_INTERSTITIAL_ID",
+          "interstitial_details_click_id": "ca-app-pub-YOUR_ANDROID_PUBLISHER_ID/ANDROID_INTERSTITIAL_ID",
+          "rewarded_unlock_id": "ca-app-pub-YOUR_ANDROID_PUBLISHER_ID/ANDROID_REWARDED_ID"
+        }
+      }
+    },
+    "supabase": {
+      "url": "https://bcovmxkuoptrrasrtsjd.supabase.co",
+      "anonKey": "sb_publishable__BZ_g3yYkQ_-GM8Sh4901w_WKyKFTtR"
+    },
+    "revenuecat": {
+      "enabled": false,
+      "api_key": "appl_YOUR_LIVE_REVENUECAT_KEY",
+      "entitlement_id": "seemore_pro"
+    },
+    "iap": {
+      "enabled": false
+    }
+  }
+}
