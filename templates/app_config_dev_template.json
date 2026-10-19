@@ -14,15 +14,15 @@
 
       "primary_action_ad_enabled": true,
       "primary_action_ad_interval": 1,
-      "primary_action_ad_type": "interstitial",
+      "primary_action_ad_type": "rewareded",
 
       "secondary_action_ad_enabled": true,
       "secondary_action_ad_interval": 1,
-      "secondary_action_ad_type": "interstitial",
+      "secondary_action_ad_type": "rewareded",
 
       "detail_action_ad_enabled": true,
       "detail_action_ad_interval": 1,
-      "detail_action_ad_type": "interstitial",
+      "detail_action_ad_type": "rewareded",
 
       "interstitial_min_interval_seconds": 15,
       "interstitial_max_per_session": 15,
