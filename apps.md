@@ -66,3 +66,9 @@ Support Page:   https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/su
 - **Dev Remote Config (jsDelivr CDN):**  https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/reelmedio-watch-forever/dev.json
 - **Prod Remote Config (jsDelivr CDN):** https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/reelmedio-watch-forever/prod.json
 
+## SmartQuiz: Brain Train
+- **Privacy Policy:** https://City-Shadow.github.io/apps-pages/smartquiz-brain-train/privacy.html
+- **Support Page:**   https://City-Shadow.github.io/apps-pages/smartquiz-brain-train/support.html
+- **Dev Remote Config (jsDelivr CDN):**  https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/smartquiz-brain-train/dev.json
+- **Prod Remote Config (jsDelivr CDN):** https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/smartquiz-brain-train/prod.json
+
