@@ -22,7 +22,7 @@
 
       "detail_action_ad_enabled": true,
       "detail_action_ad_interval": 1,
-      "detail_action_ad_type": "interstitial",
+      "detail_action_ad_type": "rewareded",
 
       "interstitial_min_interval_seconds": 30,
       "interstitial_max_per_session": 8,
