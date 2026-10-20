@@ -78,3 +78,9 @@ Support Page:   https://City-Shadow.github.io/apps-pages/seemore-kdrama-track/su
 - **Dev Remote Config (jsDelivr CDN):**  https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/retap-app-watch-and-check/dev.json
 - **Prod Remote Config (jsDelivr CDN):** https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/retap-app-watch-and-check/prod.json
 
+## AuraPantry: Track and check
+- **Privacy Policy:** https://City-Shadow.github.io/apps-pages/aurapantry-track-and-check/privacy.html
+- **Support Page:**   https://City-Shadow.github.io/apps-pages/aurapantry-track-and-check/support.html
+- **Dev Remote Config (jsDelivr CDN):**  https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/aurapantry-track-and-check/dev.json
+- **Prod Remote Config (jsDelivr CDN):** https://cdn.jsdelivr.net/gh/City-Shadow/apps-pages@main/aurapantry-track-and-check/prod.json
+
