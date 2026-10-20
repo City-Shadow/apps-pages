@@ -148,17 +148,17 @@ Save this file into `templates/app_config_dev_template.json`. It uses Google's s
 
       "promo_units": {
         "ios": {
-          "interstitial_app_open_id": "{{IOS_TEST_APP_OPEN_ID}}",
-          "interstitial_primary_action_id": "{{IOS_TEST_INTERSTITIAL_ID}}",
-          "interstitial_secondary_action_id": "{{IOS_TEST_INTERSTITIAL_ID}}",
-          "interstitial_detail_action_id": "{{IOS_TEST_INTERSTITIAL_ID}}",
+          "app_open_id": "{{IOS_TEST_APP_OPEN_ID}}",
+          "primary_action_id": "{{IOS_TEST_INTERSTITIAL_ID}}",
+          "secondary_action_id": "{{IOS_TEST_INTERSTITIAL_ID}}",
+          "detail_action_id": "{{IOS_TEST_INTERSTITIAL_ID}}",
           "rewarded_unlock_id": "{{IOS_TEST_REWARDED_ID}}"
         },
         "android": {
-          "interstitial_app_open_id": "{{ANDROID_TEST_APP_OPEN_ID}}",
-          "interstitial_primary_action_id": "{{ANDROID_TEST_INTERSTITIAL_ID}}",
-          "interstitial_secondary_action_id": "{{ANDROID_TEST_INTERSTITIAL_ID}}",
-          "interstitial_detail_action_id": "{{ANDROID_TEST_INTERSTITIAL_ID}}",
+          "app_open_id": "{{ANDROID_TEST_APP_OPEN_ID}}",
+          "primary_action_id": "{{ANDROID_TEST_INTERSTITIAL_ID}}",
+          "secondary_action_id": "{{ANDROID_TEST_INTERSTITIAL_ID}}",
+          "detail_action_id": "{{ANDROID_TEST_INTERSTITIAL_ID}}",
           "rewarded_unlock_id": "{{ANDROID_TEST_REWARDED_ID}}"
         }
       }
@@ -197,7 +197,7 @@ Save this file into `templates/app_config_prod_template.json`. It defines produc
 
       "detail_action_ad_enabled": true,
       "detail_action_ad_interval": 1,
-      "detail_action_ad_type": "interstitial",
+      "detail_action_ad_type": "rewarded",
 
       "interstitial_min_interval_seconds": 30,
       "interstitial_max_per_session": 8,
@@ -206,17 +206,17 @@ Save this file into `templates/app_config_prod_template.json`. It defines produc
 
       "promo_units": {
         "ios": {
-          "interstitial_app_open_id": "{{IOS_PROD_APP_OPEN_ID}}",
-          "interstitial_primary_action_id": "{{IOS_PROD_PRIMARY_ACTION_ID}}",
-          "interstitial_secondary_action_id": "{{IOS_PROD_SECONDARY_ACTION_ID}}",
-          "interstitial_detail_action_id": "{{IOS_PROD_DETAIL_ACTION_ID}}",
+          "app_open_id": "{{IOS_PROD_APP_OPEN_ID}}",
+          "primary_action_id": "{{IOS_PROD_PRIMARY_ACTION_ID}}",
+          "secondary_action_id": "{{IOS_PROD_SECONDARY_ACTION_ID}}",
+          "detail_action_id": "{{IOS_PROD_DETAIL_ACTION_ID}}",
           "rewarded_unlock_id": "{{IOS_PROD_REWARDED_ID}}"
         },
         "android": {
-          "interstitial_app_open_id": "{{ANDROID_PROD_APP_OPEN_ID}}",
-          "interstitial_primary_action_id": "{{ANDROID_PROD_PRIMARY_ACTION_ID}}",
-          "interstitial_secondary_action_id": "{{ANDROID_PROD_SECONDARY_ACTION_ID}}",
-          "interstitial_detail_action_id": "{{ANDROID_PROD_DETAIL_ACTION_ID}}",
+          "app_open_id": "{{ANDROID_PROD_APP_OPEN_ID}}",
+          "primary_action_id": "{{ANDROID_PROD_PRIMARY_ACTION_ID}}",
+          "secondary_action_id": "{{ANDROID_PROD_SECONDARY_ACTION_ID}}",
+          "detail_action_id": "{{ANDROID_PROD_DETAIL_ACTION_ID}}",
           "rewarded_unlock_id": "{{ANDROID_PROD_REWARDED_ID}}"
         }
       }
@@ -346,7 +346,7 @@ def generate_remote_configs(script_dir, app_slug, config, services, selected_acc
     # Populate prod.json
     prod_json = prod_json\
         .replace("{{PROD_PRIMARY_AD_TYPE}}", primary_ad_type)\
-        .replace("{{PROD_SECONDARY_AD_TYPE}}", "interstitial")\
+        .replace("{{PROD_SECONDARY_AD_TYPE}}", "rewarded")\
         .replace("{{ANDROID_PROD_APP_OPEN_ID}}", prompt_id("Android Prod App Open ID", "ca-app-pub-3940256099942544/9257395921"))\
         .replace("{{ANDROID_PROD_PRIMARY_ACTION_ID}}", prompt_id("Android Prod Primary Interstitial/Rewarded ID", "ca-app-pub-3940256099942544/1033173712"))\
         .replace("{{ANDROID_PROD_SECONDARY_ACTION_ID}}", prompt_id("Android Prod Secondary Interstitial ID", "ca-app-pub-3940256099942544/1033173712"))\

@@ -140,7 +140,7 @@ def generate_remote_configs(script_dir, app_slug, config, services, selected_acc
     # Populate prod.json
     prod_json = prod_json\
         .replace("{{PROD_PRIMARY_AD_TYPE}}", primary_ad_type)\
-        .replace("{{PROD_SECONDARY_AD_TYPE}}", "interstitial")\
+        .replace("{{PROD_SECONDARY_AD_TYPE}}", "rewarded")\
         .replace("{{ANDROID_PROD_APP_OPEN_ID}}", prompt_id("Android Prod App Open ID", "ca-app-pub-3940256099942544/9257395921"))\
         .replace("{{ANDROID_PROD_PRIMARY_ACTION_ID}}", prompt_id("Android Prod Primary Interstitial/Rewarded ID", "ca-app-pub-3940256099942544/1033173712"))\
         .replace("{{ANDROID_PROD_SECONDARY_ACTION_ID}}", prompt_id("Android Prod Secondary Interstitial ID", "ca-app-pub-3940256099942544/1033173712"))\

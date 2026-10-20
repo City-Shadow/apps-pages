@@ -22,7 +22,7 @@
 
       "detail_action_ad_enabled": true,
       "detail_action_ad_interval": 1,
-      "detail_action_ad_type": "rewareded",
+      "detail_action_ad_type": "rewarded",
 
       "interstitial_min_interval_seconds": 30,
       "interstitial_max_per_session": 8,
@@ -31,17 +31,17 @@
 
       "promo_units": {
         "ios": {
-          "interstitial_app_open_id": "{{IOS_PROD_APP_OPEN_ID}}",
-          "interstitial_primary_action_id": "{{IOS_PROD_PRIMARY_ACTION_ID}}",
-          "interstitial_secondary_action_id": "{{IOS_PROD_SECONDARY_ACTION_ID}}",
-          "interstitial_detail_action_id": "{{IOS_PROD_DETAIL_ACTION_ID}}",
+          "app_open_id": "{{IOS_PROD_APP_OPEN_ID}}",
+          "primary_action_id": "{{IOS_PROD_PRIMARY_ACTION_ID}}",
+          "secondary_action_id": "{{IOS_PROD_SECONDARY_ACTION_ID}}",
+          "detail_action_id": "{{IOS_PROD_DETAIL_ACTION_ID}}",
           "rewarded_unlock_id": "{{IOS_PROD_REWARDED_ID}}"
         },
         "android": {
-          "interstitial_app_open_id": "{{ANDROID_PROD_APP_OPEN_ID}}",
-          "interstitial_primary_action_id": "{{ANDROID_PROD_PRIMARY_ACTION_ID}}",
-          "interstitial_secondary_action_id": "{{ANDROID_PROD_SECONDARY_ACTION_ID}}",
-          "interstitial_detail_action_id": "{{ANDROID_PROD_DETAIL_ACTION_ID}}",
+          "app_open_id": "{{ANDROID_PROD_APP_OPEN_ID}}",
+          "primary_action_id": "{{ANDROID_PROD_PRIMARY_ACTION_ID}}",
+          "secondary_action_id": "{{ANDROID_PROD_SECONDARY_ACTION_ID}}",
+          "detail_action_id": "{{ANDROID_PROD_DETAIL_ACTION_ID}}",
           "rewarded_unlock_id": "{{ANDROID_PROD_REWARDED_ID}}"
         }
       }
