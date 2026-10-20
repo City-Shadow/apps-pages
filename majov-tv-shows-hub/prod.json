@@ -1,0 +1,50 @@
+{
+  "config": {
+    "promotions": {
+      "enabled": true,
+      "interstitial_enabled": true,
+      "rewarded_enabled": true,
+      "debug_mode": false,
+
+      "app_open_ad_enabled": true,
+      "first_open_ad_enabled": true,
+      "app_open_ad_interval": 1,
+      "app_open_ad_max_per_day": 7,
+      "app_open_ad_max_total": 0,
+
+      "primary_action_ad_enabled": true,
+      "primary_action_ad_interval": 1,
+      "primary_action_ad_type": "rewarded",
+
+      "secondary_action_ad_enabled": true,
+      "secondary_action_ad_interval": 1,
+      "secondary_action_ad_type": "rewarded",
+
+      "detail_action_ad_enabled": true,
+      "detail_action_ad_interval": 1,
+      "detail_action_ad_type": "rewarded",
+
+      "interstitial_min_interval_seconds": 30,
+      "interstitial_max_per_session": 8,
+      "interstitial_max_per_day": 20,
+      "interstitial_load_retry_seconds": 5,
+
+      "promo_units": {
+        "ios": {
+          "app_open_id": "ca-app-pub-3940256099942544/5575463023",
+          "primary_action_id": "ca-app-pub-3940256099942544/4411468910",
+          "secondary_action_id": "ca-app-pub-3940256099942544/4411468910",
+          "detail_action_id": "ca-app-pub-3940256099942544/4411468910",
+          "rewarded_unlock_id": "ca-app-pub-3940256099942544/1712485313"
+        },
+        "android": {
+          "app_open_id": "ca-app-pub-3940256099942544/9257395921",
+          "primary_action_id": "ca-app-pub-3940256099942544/1033173712",
+          "secondary_action_id": "ca-app-pub-3940256099942544/1033173712",
+          "detail_action_id": "ca-app-pub-3940256099942544/1033173712",
+          "rewarded_unlock_id": "ca-app-pub-3940256099942544/5224354917"
+        }
+      }
+    }
+  }
+}
