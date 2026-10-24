@@ -1,7 +1,7 @@
 {
   "config": {
     "promotions": {
-      "enabled": true,
+      "enabled": false,
       "interstitial_enabled": true,
       "rewarded_enabled": true,
       "debug_mode": true,
