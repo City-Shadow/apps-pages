@@ -1,0 +1,43 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.json'
+
+jobs:
+  purge:
+    name: Purge jsDelivr CDN Cache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Purge changed JSON configs from jsDelivr
+        run: |
+          # Determine commit range
+          if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ] || [ -z "${{ github.event.before }}" ]; then
+            CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} -- '*.json')
+          else
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.json')
+          fi
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No JSON files changed in this push."
+            exit 0
+          fi
+
+          echo "Found modified JSON files:"
+          echo "$CHANGED_FILES"
+
+          # Invalidate each changed file on jsDelivr
+          for file in $CHANGED_FILES; do
+            echo "----------------------------------------"
+            echo "Purging: $file"
+            curl -s -w "\nHTTP Status: %{http_code}\n" \
+              "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$file"
+          done
